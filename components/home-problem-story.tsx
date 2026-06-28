@@ -8,53 +8,53 @@ import { useEffect, useRef, useState } from "react";
 const problemStories = [
   {
     code: "QSE",
-    name: "Ước lượng trạng thái",
-    question: "Trạng thái thật của lưới hiện tại là gì?",
+    name: "State Estimation",
+    question: "What is the true state of the grid right now?",
     body:
-      "QSE kết hợp dữ liệu đo và mô hình lưới để ước lượng điện áp, góc pha trong điều kiện phép đo có nhiễu hoặc chưa đầy đủ.",
-    input: "SCADA, PMU, mô hình lưới",
-    output: "Điện áp và góc pha ước lượng",
+      "QSE combines measurement data and grid models to estimate voltages and phase angles under noisy or incomplete measurement conditions.",
+    input: "SCADA, PMU, grid models",
+    output: "Estimated voltages and phase angles",
     method: "WLS linear system",
-    status: "Lộ trình mở rộng",
+    status: "Planned expansion",
     image: "/images/solution-operation-pipeline.png",
     icon: RadioTower
   },
   {
     code: "QPF",
-    name: "Phân bố công suất",
-    question: "Công suất đang chảy như thế nào?",
+    name: "Power Flow",
+    question: "How is power flowing?",
     body:
-      "QPF tính điện áp nút, góc pha, dòng công suất và mức mang tải, sau đó đối sánh bộ giải Classical, HHL và VQLS trên cùng dữ liệu đầu vào.",
-    input: "Topology, nguồn phát, phụ tải",
+      "QPF computes bus voltages, phase angles, line flows and loading levels, then compares Classical, HHL and VQLS solvers on the same input data.",
+    input: "Topology, generation, loads",
     output: "Voltage, line flow, violations",
     method: "DC PF / Newton linear solve",
-    status: "MVP hiện tại",
+    status: "Current MVP",
     image: "/images/solution-solver-workspace.png",
     icon: Gauge
   },
   {
     code: "QOPF",
-    name: "Tối ưu vận hành",
-    question: "Điều độ thế nào để tối ưu chi phí và an toàn?",
+    name: "Operational Optimization",
+    question: "How to dispatch to optimize cost and safety?",
     body:
-      "QOPF đưa chi phí nguồn phát, giới hạn đường dây và các ràng buộc vận hành vào một bài toán tối ưu có thể thử nghiệm với hướng giải lượng tử.",
-    input: "Dự báo, chi phí, ràng buộc",
-    output: "Điều độ tối ưu và chi phí",
+      "QOPF incorporates generation costs, line limits and operational constraints into an optimization problem that can be explored with quantum-oriented solvers.",
+    input: "Forecasts, costs, constraints",
+    output: "Optimal dispatch and cost",
     method: "KKT / linearized OPF",
-    status: "Lộ trình mở rộng",
+    status: "Planned expansion",
     image: "/images/solution-quantum-map.png",
     icon: SlidersHorizontal
   },
   {
     code: "QEMTP",
-    name: "Phân tích quá độ",
-    question: "Lưới phản ứng thế nào sau một nhiễu loạn?",
+    name: "Transient Analysis",
+    question: "How does the grid respond after a disturbance?",
     body:
-      "QEMTP hướng tới chuỗi hệ phương trình theo từng bước thời gian để mô phỏng dạng sóng, đáp ứng động và chỉ báo ổn định sau sự cố.",
-    input: "Mô hình động và kịch bản sự cố",
-    output: "Dạng sóng và chỉ báo ổn định",
+      "QEMTP targets a time-stepped sequence of equation systems to simulate waveforms, dynamic response and post-fault stability indicators.",
+    input: "Dynamic models and fault scenarios",
+    output: "Waveforms and stability indicators",
     method: "Per-time-step linear systems",
-    status: "Nghiên cứu tiếp theo",
+    status: "Further research",
     image: "/images/intro-physical-grid.png",
     icon: Waves
   }
@@ -87,14 +87,14 @@ export function HomeProblemStory() {
   return (
     <section id="problem-map" className="problem-story" aria-labelledby="problem-story-title">
       <div className="problem-story-heading" data-reveal="up">
-        <div className="section-index">02 / Bản đồ bài toán</div>
+        <div className="section-index">02 / Problem map</div>
         <div>
-          <p className="home-eyebrow">Bốn câu hỏi vận hành</p>
-          <h2 id="problem-story-title">Mỗi điểm nghẽn kỹ thuật cần một cách tiếp cận lượng tử khác nhau.</h2>
+          <p className="home-eyebrow">Four operational questions</p>
+          <h2 id="problem-story-title">Each technical bottleneck requires a different quantum approach.</h2>
         </div>
         <p>
-          QuanWatt đặt bài toán điện lực lên trước thuật toán. Cuộn qua từng chương để xem dữ liệu đầu
-          vào, kết quả đầu ra và hướng xây dựng hệ tuyến tính tương ứng.
+          QuanWatt puts power system problems before algorithms. Scroll through each chapter to see
+          the input data, expected outputs and the corresponding linear system construction approach.
         </p>
       </div>
 
@@ -121,20 +121,20 @@ export function HomeProblemStory() {
                 <div className="problem-story-step-body">{story.body}</div>
                 <dl>
                   <div>
-                    <dt>Đầu vào</dt>
+                      <dt>Input</dt>
                     <dd>{story.input}</dd>
                   </div>
                   <div>
-                    <dt>Đầu ra</dt>
+                    <dt>Output</dt>
                     <dd>{story.output}</dd>
                   </div>
                   <div>
-                    <dt>Hướng giải</dt>
+                    <dt>Solution approach</dt>
                     <dd>{story.method}</dd>
                   </div>
                 </dl>
                 <Link href="/solution#problems">
-                  Xem chi tiết {story.code}
+                  View details {story.code}
                   <ArrowUpRight aria-hidden="true" size={16} />
                 </Link>
               </article>

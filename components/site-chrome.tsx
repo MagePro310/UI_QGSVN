@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 export function SiteHeader() {
   return (
     <header className="site-header">
-      <Link className="brand" href="/" aria-label="Trang chủ QuanWatt">
+      <Link className="brand" href="/" aria-label="QuanWatt homepage">
         <Image
           className="brand-logo"
           src="/images/quanwatt-logo.png"
@@ -17,12 +17,12 @@ export function SiteHeader() {
         />
       </Link>
       <nav className="top-nav" aria-label="Primary navigation">
-        <Link href="/">Tổng quan</Link>
-        <Link href="/solution">Giải pháp</Link>
+        <Link href="/">Overview</Link>
+        <Link href="/solution">Solution</Link>
         <Link href="/solution#solver">Demo</Link>
-        <Link href="/roadmap">Lộ trình</Link>
+        <Link href="/roadmap">Roadmap</Link>
         <Link className="nav-cta" href="/solution#solver">
-          Mở workspace
+          Open workspace
           <ArrowUpRight aria-hidden="true" size={15} />
         </Link>
       </nav>
@@ -41,17 +41,17 @@ export function SiteFooter() {
           width={800}
           height={690}
         />
-        <span>Nền tảng vận hành lưới điện hỗ trợ lượng tử</span>
+        <span>Quantum-enabled grid operations platform</span>
       </div>
       <div className="footer-links" aria-label="Footer navigation">
-        <Link href="/">Tổng quan</Link>
-        <Link href="/solution">Giải pháp</Link>
+        <Link href="/">Overview</Link>
+        <Link href="/solution">Solution</Link>
         <Link href="/solution#solver">Demo</Link>
-        <Link href="/roadmap">Lộ trình</Link>
+        <Link href="/roadmap">Roadmap</Link>
       </div>
       <div className="footer-meta">
-        <span>MVP QPF với định hướng mở rộng QSE, QOPF và QEMTP</span>
-        <span>Nghiên cứu hạ tầng hỗ trợ bởi điện toán lượng tử</span>
+        <span>MVP QPF with planned extension to QSE, QOPF and QEMTP</span>
+        <span>Research on quantum-enabled infrastructure</span>
       </div>
     </footer>
   );

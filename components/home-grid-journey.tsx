@@ -6,53 +6,53 @@ import { useEffect, useRef, useState } from "react";
 
 const gridStages = [
   {
-    name: "Nguồn phát",
-    label: "Điểm khởi đầu",
-    title: "Điện năng được tạo ra và cân bằng theo nhu cầu hệ thống.",
+    name: "Generation",
+    label: "Starting point",
+    title: "Electricity is generated and balanced to meet system demand.",
     body:
-      "Nhiệt điện, thủy điện, điện gió và điện mặt trời cung cấp công suất trong giới hạn kỹ thuật, dự phòng và tốc độ thay đổi của từng tổ máy.",
-    telemetry: "P/Q, điện áp đầu cực, công suất dự phòng",
-    risk: "Mất cân bằng nguồn – tải",
+      "Thermal, hydro, wind and solar sources provide power within technical limits, reserve margins and ramping rates.",
+    telemetry: "P/Q, terminal voltage, reserve capacity",
+    risk: "Generation-load imbalance",
     icon: Factory
   },
   {
-    name: "Truyền tải",
-    label: "Dòng công suất lớn",
-    title: "Công suất được đưa đi xa trên lưới điện áp cao.",
+    name: "Transmission",
+    label: "Bulk power flow",
+    title: "Power is transferred over long distances on high-voltage grids.",
     body:
-      "Hệ thống truyền tải kết nối vùng nguồn với trung tâm phụ tải. Mỗi nhánh đều được giám sát theo dòng công suất, tổn thất và giới hạn nhiệt.",
+      "The transmission system connects generation regions to load centers. Each branch is monitored by flow, losses and thermal limits.",
     telemetry: "Line flow, losses, branch loading",
-    risk: "Quá tải và vi phạm N-1",
+    risk: "Overload and N-1 violations",
     icon: RadioTower
   },
   {
-    name: "Trạm biến áp",
-    label: "Điểm chuyển đổi",
-    title: "Điện áp được biến đổi, đóng cắt và bảo vệ tại trạm.",
+    name: "Substation",
+    label: "Conversion point",
+    title: "Voltage is transformed, switched and protected at substations.",
     body:
-      "Trạm biến áp liên kết các cấp điện áp và tập trung dữ liệu từ máy biến áp, máy cắt, relay bảo vệ cùng hệ thống đo lường điều khiển.",
+      "Substations connect voltage levels and aggregate data from transformers, breakers, protection relays and control systems.",
     telemetry: "Tap, breaker, relay, alarm",
-    risk: "Sự cố thiết bị hoặc tác động bảo vệ sai",
+    risk: "Equipment failure or incorrect protection action",
     icon: Workflow
   },
   {
-    name: "Phân phối",
-    label: "Tiếp cận khu vực",
-    title: "Lưới trung hạ áp đưa điện đến từng khu vực tiêu thụ.",
+    name: "Distribution",
+    label: "Area delivery",
+    title: "Medium and low-voltage networks deliver power to demand areas.",
     body:
-      "Topology phân phối, điện áp nút và mức tải máy biến áp được theo dõi để phát hiện sụt áp, quá tải cục bộ hoặc gián đoạn cung cấp.",
+      "Distribution topology, node voltage and transformer loading are tracked to detect voltage drops, local overloads or service interruptions.",
     telemetry: "Node voltage, transformer loading, outage",
-    risk: "Sụt áp và quá tải cục bộ",
+    risk: "Voltage drops and local overloads",
     icon: Network
   },
   {
-    name: "Phụ tải",
-    label: "Điểm sử dụng",
-    title: "Nhu cầu cuối cùng khép lại vòng lặp vận hành.",
+    name: "Loads",
+    label: "End use point",
+    title: "End demand closes the operational loop.",
     body:
-      "Công nghiệp, tòa nhà, hộ dân và trạm sạc tạo nên hồ sơ nhu cầu biến đổi theo thời gian, thời tiết và hành vi sử dụng điện.",
+      "Industry, buildings, households and charging stations create demand profiles that vary by time, weather and usage behavior.",
     telemetry: "Demand profile, AMI, flexibility",
-    risk: "Sai số dự báo và thiếu công suất vận hành",
+    risk: "Forecast error and operating power shortages",
     icon: Building2
   }
 ];
@@ -84,14 +84,14 @@ export function HomeGridJourney() {
   return (
     <section id="grid-journey" className="home-grid-journey" aria-labelledby="grid-journey-title">
       <div className="grid-journey-heading" data-reveal="up">
-        <div className="section-index section-index-light">04 / Hành trình năng lượng</div>
+        <div className="section-index section-index-light">04 / Energy journey</div>
         <div>
-          <p className="home-eyebrow">Luôn gắn với hệ thống vật lý</p>
-          <h2 id="grid-journey-title">Theo dòng điện từ nguồn phát đến điểm tiêu thụ.</h2>
+          <p className="home-eyebrow">Always grounded in the physical system</p>
+          <h2 id="grid-journey-title">Follow electricity from generation to end consumption.</h2>
         </div>
         <p>
-          Mỗi kết quả tính toán trong QuanWatt đều có thể truy ngược về thiết bị, đại lượng đo và ràng
-          buộc vận hành trên lưới điện thực.
+          Every computed result in QuanWatt can be traced back to equipment, measurements and
+          operational constraints on the real power grid.
         </p>
       </div>
 
@@ -149,11 +149,11 @@ export function HomeGridJourney() {
                 <div className="grid-journey-step-body">{stage.body}</div>
                 <dl>
                   <div>
-                    <dt>Dữ liệu quan sát</dt>
+                    <dt>Observed data</dt>
                     <dd>{stage.telemetry}</dd>
                   </div>
                   <div>
-                    <dt>Rủi ro cần kiểm soát</dt>
+                    <dt>Risk to control</dt>
                     <dd>{stage.risk}</dd>
                   </div>
                 </dl>

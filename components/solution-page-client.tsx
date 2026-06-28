@@ -200,8 +200,8 @@ export function SolutionPageClient() {
               QPF, QSE, QOPF, and QEMTP.
             </p>
             <p className="hero-vn">
-              Trang giải pháp tập trung vào pipeline vận hành, bản đồ bài toán lượng tử và demo QPF
-              với Classical, HHL, VQLS.
+              This solution page focuses on the operation pipeline, the quantum problem map and a QPF
+              demo comparing Classical, HHL, and VQLS.
             </p>
             <div className="hero-actions" aria-label="Primary actions">
               <a className="button button-primary" href="#pipeline">
@@ -289,8 +289,8 @@ export function SolutionPageClient() {
             <p className="eyebrow">Monitoring - Analysis - Operation</p>
             <h2>Operation Pipeline Dashboard</h2>
             <p>
-              Pipeline vận hành mô tả dòng dữ liệu trong hệ thống điện, từ đo đạc SCADA/PMU/AMI
-              đến dự báo, phân tích và ra quyết định.
+              The operation pipeline describes the flow of data in the power system, from SCADA/PMU/AMI
+              measurements to forecasting, analysis, and decision-making.
             </p>
           </div>
           <figure className="section-image">
