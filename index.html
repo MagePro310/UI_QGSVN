@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quantum-assisted Power Grid Operation Platform</title>
+    <meta
+      name="description"
+      content="A web platform for understanding power grid operation and evaluating HHL/VQLS solvers for power system computation."
+    >
+    <link rel="preload" href="assets/grid-quantum-hero.png" as="image">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Quantum Grid home">
+        <span class="brand-mark" aria-hidden="true">QG</span>
+        <span>
+          <strong>Quantum Grid</strong>
+          <small>Operation Platform</small>
+        </span>
+      </a>
+      <nav class="top-nav" aria-label="Primary navigation">
+        <a href="#overview">Power Grid</a>
+        <a href="#pipeline">Pipeline</a>
+        <a href="#quantum-map">Quantum Map</a>
+        <a href="#problems">Problems</a>
+        <a href="#solver">Solver</a>
+        <a href="#results">Results</a>
+        <a href="#report">Report</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero-section">
+        <div class="hero-media" aria-hidden="true"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Power system analytics + quantum linear solvers</p>
+          <h1>Quantum-assisted Power Grid Operation Platform</h1>
+          <p class="hero-copy">
+            A web platform for understanding power grid operation and evaluating
+            HHL/VQLS solvers for power system computation.
+          </p>
+          <p class="hero-vn">
+            Nền tảng hỗ trợ người dùng hiểu tổng quan vận hành hệ thống điện,
+            quan sát pipeline vận hành và đánh giá khả năng ứng dụng HHL/VQLS.
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button button-primary" href="#pipeline">
+              <span aria-hidden="true">↳</span>
+              Explore Grid Pipeline
+            </a>
+            <a class="button button-secondary" href="#solver">
+              <span aria-hidden="true">▶</span>
+              Run QPF Demo
+            </a>
+            <a class="button button-ghost" href="#quantum-map">
+              <span aria-hidden="true">⌁</span>
+              View Quantum Map
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="problem-strip" aria-label="Quantum problem summary">
+        <article class="problem-card">
+          <span>QSE</span>
+          <strong>Quantum State Estimation</strong>
+          <p>Estimate the real-time state of the grid from noisy measurement data.</p>
+        </article>
+        <article class="problem-card featured">
+          <span>QPF</span>
+          <strong>Quantum Power Flow</strong>
+          <p>Calculate voltage, phase angle and power flow across the network.</p>
+        </article>
+        <article class="problem-card">
+          <span>QOPF</span>
+          <strong>Quantum Optimal Power Flow</strong>
+          <p>Optimize grid operation while satisfying physical and economic constraints.</p>
+        </article>
+        <article class="problem-card">
+          <span>QEMTP</span>
+          <strong>Quantum EMT / Transient Analysis</strong>
+          <p>Simulate transient and dynamic behavior after disturbances.</p>
+        </article>
+      </section>
+
+      <section id="overview" class="page-section">
+        <div class="section-heading">
+          <p class="eyebrow">Physical power grid</p>
+          <h2>Power System Physical Layer</h2>
+          <p>
+            The physical power grid transfers electrical energy from generation
+            sources through transmission, substations and distribution networks
+            to final loads.
+          </p>
+        </div>
+        <div class="overview-layout">
+          <div class="flow-line" id="physical-flow" aria-label="Power system components"></div>
+          <aside class="detail-panel" id="physical-detail" aria-live="polite"></aside>
+        </div>
+      </section>
+
+      <section id="pipeline" class="page-section band">
+        <div class="section-heading">
+          <p class="eyebrow">Monitoring - Analysis - Operation</p>
+          <h2>Operation Pipeline Dashboard</h2>
+          <p>
+            Pipeline vận hành mô tả dòng dữ liệu trong hệ thống điện, từ đo đạc
+            SCADA/PMU/AMI đến dự báo, phân tích và ra quyết định.
+          </p>
+        </div>
+        <div class="pipeline-layout">
+          <div class="pipeline-track" id="pipeline-track" aria-label="Operation modules"></div>
+          <aside class="detail-panel" id="pipeline-detail" aria-live="polite"></aside>
+        </div>
+        <div class="quantum-locations" aria-label="Quantum problem locations">
+          <span>Quantum problem locations</span>
+          <button type="button" data-problem-jump="QSE">QSE</button>
+          <button type="button" data-problem-jump="QPF">QPF</button>
+          <button type="button" data-problem-jump="QOPF">QOPF</button>
+          <button type="button" data-problem-jump="QEMTP">QEMTP</button>
+        </div>
+      </section>
+
+      <section id="quantum-map" class="page-section">
+        <div class="section-heading">
+          <p class="eyebrow">Quantum solver placement</p>
+          <h2>Quantum Problem Map in Power Grid Operation</h2>
+          <p>
+            HHL and VQLS are positioned as quantum linear solvers for
+            computationally intensive subproblems in power grid operation.
+          </p>
+        </div>
+        <div class="map-layout">
+          <div class="map-column">
+            <h3>Operation pipeline</h3>
+            <ol class="compact-list">
+              <li>Measurement</li>
+              <li>Forecasting</li>
+              <li>State Estimation</li>
+              <li>Power Flow</li>
+              <li>Contingency Analysis</li>
+              <li>OPF / Dispatch</li>
+              <li>EMT / Stability</li>
+              <li>Decision</li>
+            </ol>
+          </div>
+          <div class="map-column accent">
+            <h3>Quantum modules</h3>
+            <div id="quantum-module-list" class="module-list"></div>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Quantum module</th>
+                <th>Grid problem</th>
+                <th>Pipeline position</th>
+                <th>HHL/VQLS role</th>
+              </tr>
+            </thead>
+            <tbody id="mapping-table"></tbody>
+          </table>
+        </div>
+        <p class="solver-layer">
+          HHL / VQLS Linear Solver Layer: support large linear systems and
+          linearized steps. They accelerate selected computation blocks; they do
+          not replace the full grid operation pipeline.
+        </p>
+      </section>
+
+      <section id="problems" class="page-section band">
+        <div class="section-heading">
+          <p class="eyebrow">Problem library</p>
+          <h2>Quantum Power Grid Problems</h2>
+          <p>
+            QPF is the first MVP module. QSE, QOPF and QEMTP are prepared as
+            compatible future extensions.
+          </p>
+        </div>
+        <div class="problem-library" id="problem-library"></div>
+        <article class="problem-detail" id="problem-detail" aria-live="polite"></article>
+      </section>
+
+      <section id="solver" class="page-section solver-section">
+        <div class="section-heading">
+          <p class="eyebrow">Interactive MVP workspace</p>
+          <h2>Solver Workspace</h2>
+          <p>
+            Select a grid case, choose a power system problem, configure the
+            solver and run Classical/HHL/VQLS comparison.
+          </p>
+        </div>
+
+        <div class="workspace-grid">
+          <section class="tool-panel">
+            <h3>Input Grid Case</h3>
+            <label for="case-select">Grid case</label>
+            <select id="case-select">
+              <option value="qpf_demo_3_bus_dc">IEEE-style 3-bus QPF demo</option>
+              <option value="ieee_5_bus" disabled>IEEE 5-bus scaffold</option>
+              <option value="ieee_14_bus" disabled>IEEE 14-bus scaffold</option>
+              <option value="custom" disabled>Upload custom case</option>
+            </select>
+
+            <label for="problem-select">Problem type</label>
+            <select id="problem-select">
+              <option value="QPF">QPF - Quantum Power Flow</option>
+              <option value="QSE">QSE - Scaffold</option>
+              <option value="QOPF">QOPF - Scaffold</option>
+              <option value="QEMTP">QEMTP - Scaffold</option>
+            </select>
+
+            <div class="case-summary" id="case-summary"></div>
+          </section>
+
+          <section class="tool-panel">
+            <h3>Mathematical Model</h3>
+            <div class="matrix-meta" id="matrix-meta"></div>
+            <div class="matrix-box" id="matrix-box" aria-label="Linear system matrix"></div>
+          </section>
+
+          <section class="tool-panel">
+            <h3>Solver Configuration</h3>
+            <fieldset class="segmented" id="solver-type">
+              <legend>Solver type</legend>
+              <label>
+                <input type="radio" name="solver" value="CLASSICAL">
+                <span>Classical</span>
+              </label>
+              <label>
+                <input type="radio" name="solver" value="HHL">
+                <span>HHL</span>
+              </label>
+              <label>
+                <input type="radio" name="solver" value="VQLS" checked>
+                <span>VQLS</span>
+              </label>
+            </fieldset>
+
+            <label for="backend-select">Quantum backend</label>
+            <select id="backend-select">
+              <option>Simulator</option>
+              <option>Noisy simulator</option>
+              <option disabled>Real quantum backend</option>
+            </select>
+
+            <label for="shots-range">Shots <output id="shots-output">2048</output></label>
+            <input id="shots-range" type="range" min="512" max="4096" step="512" value="2048">
+
+            <label for="tolerance-range">Tolerance <output id="tolerance-output">0.001</output></label>
+            <input id="tolerance-range" type="range" min="0.001" max="0.01" step="0.001" value="0.001">
+
+            <button class="button button-primary run-button" type="button" id="run-solver">
+              <span aria-hidden="true">▶</span>
+              Run Solver
+            </button>
+          </section>
+        </div>
+
+        <section class="execution-panel" aria-label="Execution log">
+          <div>
+            <h3>Execution Log</h3>
+            <ol id="execution-log"></ol>
+          </div>
+          <div class="api-preview">
+            <h3>FastAPI Request Preview</h3>
+            <pre id="request-preview"></pre>
+          </div>
+        </section>
+      </section>
+
+      <section id="results" class="page-section band">
+        <div class="section-heading">
+          <p class="eyebrow">Comparison dashboard</p>
+          <h2>Result Dashboard</h2>
+          <p>
+            Compare electrical results and solver performance between Classical,
+            HHL and VQLS.
+          </p>
+        </div>
+
+        <div class="summary-grid" id="summary-grid"></div>
+
+        <div class="dashboard-grid">
+          <section class="chart-panel">
+            <h3>Runtime Comparison</h3>
+            <div class="bar-chart" id="runtime-chart"></div>
+          </section>
+          <section class="chart-panel">
+            <h3>Relative Error</h3>
+            <div class="bar-chart" id="error-chart"></div>
+          </section>
+          <section class="chart-panel">
+            <h3>Voltage Profile</h3>
+            <div class="bar-chart" id="voltage-chart"></div>
+          </section>
+          <section class="chart-panel">
+            <h3>Line Loading</h3>
+            <div class="bar-chart" id="loading-chart"></div>
+          </section>
+        </div>
+
+        <div class="result-tables">
+          <section>
+            <h3>Bus Result Table</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Bus</th>
+                    <th>Type</th>
+                    <th>Voltage pu</th>
+                    <th>Angle deg</th>
+                    <th>P injection MW</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="bus-table"></tbody>
+              </table>
+            </div>
+          </section>
+          <section>
+            <h3>Branch Result Table</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Branch</th>
+                    <th>From-To</th>
+                    <th>P flow MW</th>
+                    <th>Rate MVA</th>
+                    <th>Loading</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="branch-table"></tbody>
+              </table>
+            </div>
+          </section>
+          <section>
+            <h3>Solver Comparison Table</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Solver</th>
+                    <th>Runtime ms</th>
+                    <th>Relative error</th>
+                    <th>Residual norm</th>
+                    <th>Qubits</th>
+                    <th>Circuit depth</th>
+                    <th>Shots</th>
+                  </tr>
+                </thead>
+                <tbody id="solver-table"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <aside class="recommendation" id="recommendation"></aside>
+      </section>
+
+      <section id="report" class="page-section">
+        <div class="section-heading">
+          <p class="eyebrow">Technical output</p>
+          <h2>Technical Report Export</h2>
+          <p>
+            Export solver inputs, the Ax = b model, solver configuration,
+            comparison metrics, warnings and operating recommendation.
+          </p>
+        </div>
+        <div class="report-layout">
+          <section class="report-preview" id="report-preview"></section>
+          <section class="report-actions">
+            <h3>Export</h3>
+            <p>
+              The MVP uses mock solver results prepared for UI integration. The
+              same payload shape can be replaced by FastAPI responses later.
+            </p>
+            <button class="button button-primary" type="button" id="download-report">
+              <span aria-hidden="true">⇩</span>
+              Download JSON Report
+            </button>
+            <button class="button button-secondary" type="button" id="print-report">
+              <span aria-hidden="true">⎙</span>
+              Print Technical Report
+            </button>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Quantum Grid Operation Platform</span>
+      <span>QPF MVP with QSE, QOPF and QEMTP scaffolds</span>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
