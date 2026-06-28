@@ -6,9 +6,7 @@ import {
   Play,
   Zap
 } from "lucide-react";
-import { HomeGridJourney } from "@/components/home-grid-journey";
 import { HomeProblemStory } from "@/components/home-problem-story";
-import { HomeScrollytelling } from "@/components/home-scrollytelling";
 import { HomeStoryNavigator } from "@/components/home-story-navigator";
 import { ScrollMotion } from "@/components/scroll-motion";
 import { SiteChrome } from "@/components/site-chrome";
@@ -34,9 +32,9 @@ export default function IntroductionPage() {
               <span aria-hidden="true" />
               Giải pháp vận hành lưới điện thế hệ mới
             </p>
-            <h1>Nền tảng vận hành lưới điện hỗ trợ lượng tử</h1>
+            <h1>QuanWatt — Nền tảng vận hành lưới điện hỗ trợ lượng tử</h1>
             <p className="home-hero-lead">
-              QGRID kết nối dữ liệu vận hành, mô hình hệ thống điện và các bộ giải lượng tử trong
+              QuanWatt kết nối dữ liệu vận hành, mô hình hệ thống điện và các bộ giải lượng tử trong
               một quy trình thống nhất.
             </p>
             <p className="home-hero-vn">
@@ -88,7 +86,7 @@ export default function IntroductionPage() {
             <h2>Từ dữ liệu lưới điện đến thử nghiệm lượng tử trong cùng một nền tảng.</h2>
           </div>
           <p className="home-statement-body motion-delay-2" data-reveal="up">
-            QGRID cung cấp góc nhìn đầu-cuối về hạ tầng vật lý, quy trình vận hành và hiệu năng bộ
+            QuanWatt cung cấp góc nhìn đầu-cuối về hạ tầng vật lý, quy trình vận hành và hiệu năng bộ
             giải. Nhờ đó, đội ngũ kỹ thuật có thể xác định nơi điện toán lượng tử phù hợp, đo lường
             sai số và thời gian chạy, rồi so sánh trực tiếp với phương pháp cổ điển.
           </p>
@@ -172,10 +170,6 @@ export default function IntroductionPage() {
             </div>
           </div>
         </section>
-
-        <HomeScrollytelling />
-
-        <HomeGridJourney />
 
         <section id="demo" className="home-final-cta">
           <div data-reveal="up">

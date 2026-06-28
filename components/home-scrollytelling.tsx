@@ -98,7 +98,7 @@ export function HomeScrollytelling() {
             <div className="scrolly-shade" />
 
             <div className="scrolly-frame-meta">
-              <span>QGRID / LIVE FLOW</span>
+              <span>QUANWATT / LIVE FLOW</span>
               <span>{activeStory.number} — 04</span>
             </div>
 

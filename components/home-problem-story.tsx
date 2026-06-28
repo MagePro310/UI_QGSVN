@@ -93,7 +93,7 @@ export function HomeProblemStory() {
           <h2 id="problem-story-title">Mỗi điểm nghẽn kỹ thuật cần một cách tiếp cận lượng tử khác nhau.</h2>
         </div>
         <p>
-          QGRID đặt bài toán điện lực lên trước thuật toán. Cuộn qua từng chương để xem dữ liệu đầu
+          QuanWatt đặt bài toán điện lực lên trước thuật toán. Cuộn qua từng chương để xem dữ liệu đầu
           vào, kết quả đầu ra và hướng xây dựng hệ tuyến tính tương ứng.
         </p>
       </div>

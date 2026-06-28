@@ -1,6 +1,6 @@
-# Quantum Grid Operation Platform
+# QuanWatt
 
-Next.js web UI for a quantum-assisted power grid operation platform. The app is organized as a multipage site with Introduction, Solution & Features, and Roadmap & Milestones pages. The Solution page contains the interactive QPF demo comparing Classical, HHL, and VQLS solver results.
+Next.js web UI for QuanWatt, a quantum-assisted power grid operation platform. The app is organized as a multipage site with Introduction, Solution & Features, and Roadmap & Milestones pages. The Solution page contains the interactive QPF demo comparing Classical, HHL, and VQLS solver results.
 
 ## Features
 

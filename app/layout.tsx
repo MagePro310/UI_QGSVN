@@ -3,9 +3,12 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "QGRID | Quantum Grid Operation Platform",
+  title: "QuanWatt | Nền tảng vận hành lưới điện hỗ trợ lượng tử",
   description:
-    "Giải pháp vận hành lưới điện kết nối dữ liệu hệ thống, quy trình kỹ thuật và thử nghiệm bộ giải lượng tử HHL/VQLS."
+    "QuanWatt kết nối dữ liệu hệ thống, quy trình kỹ thuật và thử nghiệm bộ giải lượng tử HHL/VQLS.",
+  icons: {
+    icon: "/images/quanwatt-logo.png"
+  }
 };
 
 export default function RootLayout({

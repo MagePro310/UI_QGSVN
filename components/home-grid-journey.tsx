@@ -90,7 +90,7 @@ export function HomeGridJourney() {
           <h2 id="grid-journey-title">Theo dòng điện từ nguồn phát đến điểm tiêu thụ.</h2>
         </div>
         <p>
-          Mỗi kết quả tính toán trong QGRID đều có thể truy ngược về thiết bị, đại lượng đo và ràng
+          Mỗi kết quả tính toán trong QuanWatt đều có thể truy ngược về thiết bị, đại lượng đo và ràng
           buộc vận hành trên lưới điện thực.
         </p>
       </div>

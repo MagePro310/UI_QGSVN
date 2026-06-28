@@ -7,8 +7,6 @@ const homeChapters = [
   { id: "platform", label: "Tổng quan" },
   { id: "problem-map", label: "Bản đồ bài toán" },
   { id: "capabilities", label: "Năng lực" },
-  { id: "workflow", label: "Quy trình" },
-  { id: "grid-journey", label: "Hành trình năng lượng" },
   { id: "demo", label: "Trải nghiệm QPF" }
 ];
 

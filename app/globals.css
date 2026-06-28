@@ -93,27 +93,10 @@ input {
   text-decoration: none;
 }
 
-.brand-mark {
-  display: grid;
-  width: 38px;
-  height: 38px;
-  place-items: center;
-  border-radius: var(--radius);
-  color: white;
-  background: linear-gradient(135deg, var(--teal), var(--green));
-  font-weight: 800;
-  letter-spacing: 0;
-}
-
-.brand strong,
-.brand small {
+.brand-logo {
   display: block;
-  line-height: 1.15;
-}
-
-.brand small {
-  color: var(--muted);
-  font-size: 12px;
+  width: 72px;
+  height: auto;
 }
 
 .top-nav {
@@ -1440,25 +1423,11 @@ body {
 }
 
 .brand {
-  gap: 12px;
   color: white;
 }
 
-.brand-mark {
-  width: 32px;
-  height: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  color: white;
-  background: transparent;
-}
-
-.brand-wordmark {
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
+.brand-logo {
+  width: 72px;
 }
 
 .top-nav {
@@ -2157,20 +2126,17 @@ body {
   color: white;
 }
 
-.footer-brand strong,
-.footer-brand span {
+.footer-brand-logo {
   display: block;
+  width: 92px;
+  height: auto;
 }
 
-.footer-brand strong {
-  font-size: 16px;
-  letter-spacing: 0.14em;
-}
-
-.footer-brand span {
-  margin-top: 4px;
+.footer-brand > span {
+  max-width: 220px;
   color: var(--space-muted);
   font-size: 12px;
+  line-height: 1.5;
 }
 
 .footer-links {
@@ -2411,8 +2377,8 @@ body {
 }
 
 @media (max-width: 620px) {
-  .brand-wordmark {
-    font-size: 15px;
+  .brand-logo {
+    width: 64px;
   }
 
   .top-nav {
@@ -2690,7 +2656,7 @@ body {
 .text-link,
 .problem-rail-item svg,
 .capability-copy > a,
-.brand-mark svg,
+.brand-logo,
 .process-item svg,
 .physical-layer-list small {
   transition:
@@ -2712,9 +2678,9 @@ body {
   transform: translateX(4px);
 }
 
-.brand:hover .brand-mark svg,
-.brand:focus-visible .brand-mark svg {
-  transform: rotate(24deg);
+.brand:hover .brand-logo,
+.brand:focus-visible .brand-logo {
+  transform: scale(1.04);
 }
 
 .hero-metrics div {

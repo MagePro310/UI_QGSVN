@@ -1,15 +1,20 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { ArrowUpRight, Atom } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export function SiteHeader() {
   return (
     <header className="site-header">
-      <Link className="brand" href="/" aria-label="Quantum Grid home">
-        <span className="brand-mark">
-          <Atom aria-hidden="true" size={21} strokeWidth={1.5} />
-        </span>
-        <strong className="brand-wordmark">QGRID</strong>
+      <Link className="brand" href="/" aria-label="Trang chủ QuanWatt">
+        <Image
+          className="brand-logo"
+          src="/images/quanwatt-logo.png"
+          alt="QuanWatt"
+          width={800}
+          height={690}
+          priority
+        />
       </Link>
       <nav className="top-nav" aria-label="Primary navigation">
         <Link href="/">Tổng quan</Link>
@@ -29,11 +34,14 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="footer-brand">
-        <Atom aria-hidden="true" size={24} strokeWidth={1.4} />
-        <div>
-          <strong>QGRID</strong>
-          <span>Quantum Grid Operation Platform</span>
-        </div>
+        <Image
+          className="footer-brand-logo"
+          src="/images/quanwatt-logo.png"
+          alt="QuanWatt"
+          width={800}
+          height={690}
+        />
+        <span>Nền tảng vận hành lưới điện hỗ trợ lượng tử</span>
       </div>
       <div className="footer-links" aria-label="Footer navigation">
         <Link href="/">Tổng quan</Link>
