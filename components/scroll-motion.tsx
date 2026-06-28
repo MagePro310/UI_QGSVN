@@ -19,13 +19,16 @@ export function ScrollMotion() {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
 
-          entry.target.classList.add("is-visible");
-          entry.target.addEventListener(
-            "transitionend",
-            () => entry.target.classList.remove("will-reveal"),
-            { once: true }
-          );
-          observer.unobserve(entry.target);
+          const target = entry.target as HTMLElement;
+          const finishReveal = (event: TransitionEvent) => {
+            if (event.target !== target) return;
+            target.classList.remove("will-reveal");
+            target.removeEventListener("transitionend", finishReveal);
+          };
+
+          target.classList.add("is-visible");
+          target.addEventListener("transitionend", finishReveal);
+          observer.unobserve(target);
         });
       },
       { rootMargin: "0px 0px -10%", threshold: 0.12 }
