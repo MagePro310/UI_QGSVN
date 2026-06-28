@@ -86,13 +86,65 @@ export default function IntroductionPage() {
           </div>
           <div className="home-statement-copy motion-delay-1" data-reveal="up">
             <p className="home-eyebrow">One workflow, one technical context</p>
-            <h2>From grid data to quantum experiments in one platform.</h2>
+            <h2>
+              From grid data to <span className="no-break">quantum-ready</span> experiments.
+            </h2>
           </div>
-          <p className="home-statement-body motion-delay-2" data-reveal="up">
-            QuanWatt provides an end-to-end view of physical infrastructure, operational processes
-            and solver performance. This enables engineering teams to identify suitable quantum
-            use-cases, measure error and runtime, and compare directly with classical methods.
-          </p>
+          <div className="home-statement-detail">
+            <p className="home-statement-body motion-delay-2" data-reveal="up">
+              QuanWatt brings grid topology, operational signals and solver results into one view,
+              helping engineering teams identify fit, compare runtime and error, and benchmark each
+              approach against classical baselines.
+            </p>
+
+            <div className="home-statement-visual motion-delay-3" data-reveal="up">
+              <div className="home-statement-visual-header">
+                <span>Workflow snapshot</span>
+                <strong>Operational data → model → solver → decision</strong>
+              </div>
+
+              <div className="home-statement-flow" aria-label="Platform workflow visualization">
+                <div className="home-statement-flow-node">
+                  <span>01</span>
+                  <strong>Grid data</strong>
+                  <small>Topology, measurements, operating limits</small>
+                </div>
+                <div className="home-statement-flow-arrow" aria-hidden="true">→</div>
+                <div className="home-statement-flow-node">
+                  <span>02</span>
+                  <strong>System model</strong>
+                  <small>Physical constraints, scenarios, assumptions</small>
+                </div>
+                <div className="home-statement-flow-arrow" aria-hidden="true">→</div>
+                <div className="home-statement-flow-node">
+                  <span>03</span>
+                  <strong>Solver run</strong>
+                  <small>Classical, HHL and VQLS comparison</small>
+                </div>
+                <div className="home-statement-flow-arrow" aria-hidden="true">→</div>
+                <div className="home-statement-flow-node">
+                  <span>04</span>
+                  <strong>Decision view</strong>
+                  <small>Runtime, error and voltage profile outputs</small>
+                </div>
+              </div>
+
+              <div className="home-statement-metrics">
+                <div>
+                  <strong>04</strong>
+                  <span>Core problem groups</span>
+                </div>
+                <div>
+                  <strong>03</strong>
+                  <span>Solver paths tracked</span>
+                </div>
+                <div>
+                  <strong>01</strong>
+                  <span>Unified experiment flow</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <HomeProblemStory />

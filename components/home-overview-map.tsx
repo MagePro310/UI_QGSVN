@@ -13,6 +13,8 @@ type OverviewChapter = {
   eyebrow: string;
   title: string;
   description: string;
+  detail: string;
+  metric: string;
   icon: LucideIcon;
 };
 
@@ -23,6 +25,9 @@ const overviewChapters: OverviewChapter[] = [
     eyebrow: "Overview",
     title: "Platform overview",
     description: "From operational data to solver experiments in a unified workflow.",
+    detail:
+      "Unifies grid topology, measurement streams, operating context and experiment outputs so teams can move from situational awareness to solver evaluation without switching tools.",
+    metric: "Data → models → experiments",
     icon: Activity
   },
   {
@@ -31,6 +36,9 @@ const overviewChapters: OverviewChapter[] = [
     eyebrow: "Four core problems",
     title: "Problem map",
     description: "Locate QSE, QPF, QOPF and QEMTP in the context of grid operations.",
+    detail:
+      "Shows how each workload sits inside the operation pipeline, from state estimation and power flow to dispatch optimization and transient stability analysis.",
+    metric: "QSE · QPF · QOPF · QEMTP",
     icon: Map
   },
   {
@@ -39,6 +47,9 @@ const overviewChapters: OverviewChapter[] = [
     eyebrow: "Three value layers",
     title: "Core capabilities",
     description: "Understand the system, identify quantum application points and evaluate solvers.",
+    detail:
+      "Combines operational visibility, quantum opportunity mapping and solver benchmarking so the platform can explain both why a problem matters and how each solver performs.",
+    metric: "Visibility · fit · benchmarking",
     icon: Layers3
   },
   {
@@ -47,6 +58,9 @@ const overviewChapters: OverviewChapter[] = [
     eyebrow: "Verified results",
     title: "QPF experience",
     description: "Run and compare Classical, HHL and VQLS in the same workspace.",
+    detail:
+      "Uses a consistent 3-bus power flow case with runtime, relative error, voltage profile and line-loading outputs so the solver comparison stays transparent and repeatable.",
+    metric: "3-bus case · 3 solvers",
     icon: PlayCircle
   }
 ];
@@ -85,6 +99,8 @@ export function HomeOverviewMap() {
                 <small>{chapter.eyebrow}</small>
                 <strong>{chapter.title}</strong>
                 <p>{chapter.description}</p>
+                <p>{chapter.detail}</p>
+                <small>{chapter.metric}</small>
               </div>
               <ArrowDown className="overview-map-arrow" aria-hidden="true" size={18} />
             </a>
