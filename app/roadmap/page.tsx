@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Check } from "lucide-react";
 import { SiteChrome } from "@/components/site-chrome";
 
 const milestones = [
@@ -84,7 +85,7 @@ export default function RoadmapPage() {
               Open Current Demo
             </Link>
             <Link className="button button-secondary" href="/solution">
-              Review Features
+              Review Technology
             </Link>
           </div>
           <figure className="subpage-hero-media">
@@ -97,41 +98,78 @@ export default function RoadmapPage() {
           </figure>
         </section>
 
-        <section className="page-section band">
-          <div className="section-heading">
-            <p className="eyebrow">Milestone plan</p>
-            <h2>Delivery Path</h2>
-            <p>
-              Each milestone keeps the public UI contract stable while replacing mock data with
-              solver-backed results and adding new power system problem modules.
-            </p>
+        <section className="page-section band roadmap-path-section">
+          <div className="roadmap-path-heading">
+            <div className="section-heading">
+              <p className="eyebrow">Milestone plan</p>
+              <h2>Delivery Path</h2>
+              <p>
+                Each milestone keeps the public UI contract stable while replacing mock data with
+                solver-backed results and adding new power system problem modules.
+              </p>
+            </div>
+            <div className="roadmap-path-legend" aria-label="Roadmap status legend">
+              <span className="is-complete">Completed</span>
+              <span className="is-current">Current priority</span>
+              <span className="is-planned">Planned</span>
+            </div>
           </div>
 
-          <div className="roadmap-grid">
-            {milestones.map((milestone) => (
-              <article className="milestone-card" key={milestone.phase}>
-                <figure className="milestone-image">
-                  <Image
-                    src={milestone.image}
-                    alt={`${milestone.title} visual`}
-                    fill
-                    sizes="(max-width: 900px) 100vw, 30vw"
-                  />
-                </figure>
-                <div className="milestone-meta">
-                  <span>{milestone.phase}</span>
-                  <strong>{milestone.status}</strong>
-                </div>
-                <h3>{milestone.title}</h3>
-                <p className="milestone-window">{milestone.window}</p>
-                <p>{milestone.body}</p>
-                <ul>
-                  {milestone.outputs.map((output) => (
-                    <li key={output}>{output}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
+          <div className="roadmap-path" aria-label="QuanWatt delivery roadmap">
+            {milestones.map((milestone, index) => {
+              const statusClass =
+                milestone.status === "Completed UI"
+                  ? "is-complete"
+                  : milestone.status === "Next"
+                    ? "is-current"
+                    : "is-planned";
+
+              return (
+                <article
+                  className={`roadmap-path-step ${statusClass}`}
+                  aria-current={statusClass === "is-current" ? "step" : undefined}
+                  key={milestone.phase}
+                >
+                  <div className="roadmap-path-marker" aria-hidden="true">
+                    {statusClass === "is-complete" ? (
+                      <Check size={18} strokeWidth={2.4} />
+                    ) : (
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                    )}
+                  </div>
+
+                  <div className="roadmap-path-card">
+                    <div className="milestone-meta">
+                      <span>{milestone.phase}</span>
+                      <strong>{milestone.status}</strong>
+                    </div>
+                    <p className="milestone-window">{milestone.window}</p>
+                    <h3>{milestone.title}</h3>
+                    <p>{milestone.body}</p>
+                    <div className="roadmap-path-outputs">
+                      <span>Planned outputs</span>
+                      <ul>
+                        {milestone.outputs.map((output) => (
+                          <li key={output}>{output}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <figure className="roadmap-path-visual">
+                    <Image
+                      src={milestone.image}
+                      alt={`${milestone.title} visual`}
+                      fill
+                      sizes="(max-width: 760px) 100vw, 38vw"
+                    />
+                    <figcaption>
+                      {String(index + 1).padStart(2, "0")} / {String(milestones.length).padStart(2, "0")}
+                    </figcaption>
+                  </figure>
+                </article>
+              );
+            })}
           </div>
         </section>
 
@@ -150,7 +188,7 @@ export default function RoadmapPage() {
                 Run QPF Demo
               </Link>
               <Link className="button button-secondary" href="/">
-                Back to Introduction
+                Back to Home
               </Link>
             </div>
           </div>

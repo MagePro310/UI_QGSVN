@@ -3,9 +3,9 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "QuanWatt | Quantum-enabled Grid Operations Platform",
+  title: "QuanWatt | Quantum Simulation for Power Grids",
   description:
-    "QuanWatt connects system data, engineering workflows and HHL/VQLS quantum solver experiments.",
+    "QuanWatt helps utility and power-system R&D teams assess, simulate and benchmark HHL and VQLS workloads before deployment.",
   icons: {
     icon: "/images/quanwatt-logo.png"
   }

@@ -17,12 +17,12 @@ export function SiteHeader() {
         />
       </Link>
       <nav className="top-nav" aria-label="Primary navigation">
-        <Link href="/">Overview</Link>
-        <Link href="/solution">Solution</Link>
+        <Link href="/#services">Services</Link>
+        <Link href="/solution">Technology</Link>
         <Link href="/solution#solver">Demo</Link>
         <Link href="/roadmap">Roadmap</Link>
-        <Link className="nav-cta" href="/solution#solver">
-          Open workspace
+        <Link className="nav-cta" href="/#contact">
+          Discuss a pilot
           <ArrowUpRight aria-hidden="true" size={15} />
         </Link>
       </nav>
@@ -41,17 +41,19 @@ export function SiteFooter() {
           width={800}
           height={690}
         />
-        <span>Quantum-enabled grid operations platform</span>
+        <span>Quantum simulation and benchmarking for power-system R&amp;D</span>
       </div>
       <div className="footer-links" aria-label="Footer navigation">
-        <Link href="/">Overview</Link>
-        <Link href="/solution">Solution</Link>
+        <Link href="/#services">Services</Link>
+        <Link href="/solution">Technology</Link>
         <Link href="/solution#solver">Demo</Link>
         <Link href="/roadmap">Roadmap</Link>
+        {/* TODO: Replace placeholder contact details before production launch. */}
+        <a href="mailto:contact@quanwatt.com">Contact</a>
       </div>
       <div className="footer-meta">
-        <span>MVP QPF with planned extension to QSE, QOPF and QEMTP</span>
-        <span>Research on quantum-enabled infrastructure</span>
+        <span>Available for pilot projects and research collaboration</span>
+        <span>Vietnam · contact@quanwatt.com</span>
       </div>
     </footer>
   );
